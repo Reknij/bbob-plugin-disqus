@@ -1,0 +1,6 @@
+{
+    "name": "bbob-plugin-disqus",
+    "author": "Jinker",
+    "description": "To enable disqus comment platform.",
+    "entry": "bbob-plugin-disqus.dll"
+}
