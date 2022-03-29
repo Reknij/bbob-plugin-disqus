@@ -1,8 +1,35 @@
 ﻿using Bbob.Plugin;
 
 namespace bbob_plugin_disqus;
+
+[PluginCondition("*", PluginOrder = PluginOrder.BeforeMe)]
 public class Class1 : IPlugin
 {
+    public Class1()
+    {
+        PluginHelper.registerCustomCommand("config", (args)=>
+        {
+            if (args.Length == 2)
+            {
+                PluginHelper.getPluginJsonConfig<MyConfig>(out var tar);
+                MyConfig config = tar ?? new MyConfig();
+                switch (args[0])
+                {
+                    case "shortName":
+                        config.shortName = args[1];
+                        break;
+
+                    default: break;
+                }
+                PluginHelper.savePluginJsonConfig(config);
+                PluginHelper.printConsole("Success save config.");
+            }
+            else
+            {
+                PluginHelper.printConsole("Please enter config name and value!");
+            }
+        });
+    }
     public void GenerateCommand(string filePath, GenerationStage stage)
     {
         if (stage == GenerationStage.FinalProcess)
