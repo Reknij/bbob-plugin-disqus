@@ -1,9 +1,9 @@
 # Install
 Use command:
 ```
-bbob add -a https://github.com/Reknij/bbob-plugin-disqus/releases/download/v1.0.0/bbob-plugin-disqus.rar
+bbob add -a https://github.com/Reknij/bbob-plugin-disqus/releases/download/v1.2.0/bbob-plugin-disqus.rar
 ```
-Please change 'v1.0.0' to you expect version for install in address.
+Please change 'v1.2.0' to you expect version for install in address.
 
 # How to use
 In Bbob `./configs`, create `bbob-plugin-disqus.config.json`, and then write the content:
